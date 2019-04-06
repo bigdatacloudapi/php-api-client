@@ -1,0 +1,15 @@
+{
+    "name": "bigdatacloudapi/php-api-client",
+    "description": "A PHP client wrapper for the BigDataCloud API",
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4",
+        "ext-curl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "BigDataCloud\\Api\\": "src/"
+        }
+    }
+}
