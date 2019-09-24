@@ -8,11 +8,13 @@ class Client {
 	public $server='api.bigdatacloud.net';
 	public $code;
 	public $timeout=120;
+	public $language;
 
-	public function __construct($apiKey,$nameSpace='data',$server=null) {
+	public function __construct($apiKey,$nameSpace='data',$server=null,$language='en') {
 		if ($server) $this->server=$server;
 		$this->apiKey=$apiKey;
 		$this->nameSpace=$nameSpace;
+		$this->language=$language;
 	}
 
 	public function setIncludeTimer($includeTimer=1) {
@@ -55,6 +57,10 @@ class Client {
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $type);
 		$qs='';
 		$headers=[];
+		if (!$payload) $payload=[];
+		if (!isset($payload['localityLanguage'])) {
+			$payload['localityLanguage']=$this->language;
+		}
 		if (count($payload)) {
 			switch($type) {
 				case 'GET':
