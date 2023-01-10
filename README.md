@@ -62,7 +62,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 //Using composer installed location for example, simply reference the /src/Client.php where extracted/installed instead.
 //require_once __DIR__ . '/vendor/bigdatacloudapi/php-api-client/src/Client.php';
 
-$apiKey = "XXX"; // Your api key found at: https://www.bigdatacloud.net/customer/account
+$apiKey = "XXX"; // Your api key found at: https://www.bigdatacloud.com/account
 
 $client = new \BigDataCloud\Api\Client($apiKey);
 
